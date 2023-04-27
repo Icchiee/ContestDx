@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="Ja">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>コンクールQRコード作成app</title>
+    <link rel="stylesheet" href="/public/stylesforhome.css" />
+    <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="/jQuery-Validation-Engine/js/jquery.validationEngine.min.js"></script>
+    <script src="/jQuery-Validation-Engine/js/jquery.validationEngine.js"></script>
+    <script src="/jQuery-Validation-Engine/js/languages/jquery.validationEngine-ja.js"></script>
+    <link rel="stylesheet" href="/jQuery-Validation-Engine/css/validationEngine.jquery.css">
+
+    <script>
+     $(function(){
+        jQuery("#form").validationEngine();
+      });
+    </script>
+  </head>
+
+ 
+  <header>
+      <div class="container">
+        <div class="icon">
+          <img
+            src="uminoko.png"
+            width="120"
+            height="120"
+            alt="コンクールアイコン"
+          />
+        </div>
+        <h1>WebApp(プロトタイプ)</h1>
+        <p>応募票入力はこちらから!!</p>
+      </div>
+   </header>
+
+  <body>
+    <div class="flowchart">
+      <ul class="nav">
+        <li class="now">フォーム入力</li>
+        <li>→</li>
+        <li>内容確認</li>
+        <li>→</li>
+        <li>QRcodeの生成</li>
+      </ul>
+
+    </div>
+    <form action="/show/create" method="post" id="form" class="form"  novalidate="novalidate">
+      <div class="personal">
+        <p class="personalinfo">personal information</p>
+      <table border="1" align="center">
+        <tr>
+          <td>
+            <span class="must">必須</span>
+            <p>氏名</p>
+          </td>
+          <td>
+
+            <input
+              type="text"
+              placeholder="氏名"
+              id="name"
+              name="name"
+              class="validate[required]"
+            />
+          </td>
+        </tr>
+
+        <tr>
+
+          <td>
+            <span class="must">必須</span>
+            <p>氏名（カタカナ）</p>
+          </td>
+          <td>
+
+            <input
+              type="text"
+              placeholder="フリガナ"
+              name="subname"
+              id="subname"
+              class="validate[required, custom[katakana]]"
+            />
+          </td>
+
+        </tr>
+
+        <tr>
+          <td>
+            <span class="must">必須</span>
+            <p>保護者氏名</p>
+          </td>
+          <td>
+            
+            <input
+              type="text"
+              placeholder="氏名"
+              id="namep"
+              name="namep"
+              class="validate[required]"
+            />
+          </td>
+          
+
+        </tr>
+        
+        <tr>
+          
+          <td>
+            <span class="must">必須</span>
+            <p>保護者氏名（カタカナ）</p>
+  
+          </td>
+          <td>
+            <input
+              type="text"
+              placeholder="フリガナ"
+              name="subnamep"
+              id="subnamep"
+              class="validate[required, custom[katakana]]"
+            />
+            
+  
+          </td>
+        </tr>
+
+
+        <tr>
+          <td>
+            <span class="must">必須</span>
+            <p>郵便番号(ハイフン無し)</p>
+
+          </td>
+
+          <td>
+             <input 
+             type="text" 
+             name="zip11" 
+             onKeyUp="AjaxZip3.zip2addr(this,'','addr11','addr11');" 
+             id="addressnum"
+             class="validate[required, custom[number],maxSize[7],minSize[7]]"
+             >
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <p>住所(自動入力)</p>
+
+          </td>
+          <td>
+            <input type="text" name="addr11" id="address" class="validate[required]">
+            
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <p>住所(番地以降)</p>
+
+          </td>
+          <td>
+            <input type="text" name="address2" id="address2">
+            
+          </td>
+        </tr>
+
+
+        <tr>
+          <td>
+            <span class="must">必須</span>
+            <p>学校名</p>
+          </td>
+          <td>
+
+            <input
+              type="text"
+              placeholder="学校名"
+              id="school"
+              name="school"
+              class="validate[required]"
+            />
+            
+          </td>
+        </tr>
+        <tr>
+         <td>
+             <span class="must">必須</span>
+             <p>学年<p>
+
+          </td>
+         <td>
+           <input 
+           type="text" 
+           id="grade" 
+           name="grade"
+           class="validate[required,custom[number],minSize[1],maxSize[1]]"  />
+
+         </td>
+        </tr>
+
+        <tr>
+          <td>
+            <span class="option">任意</span>
+            <p>性別</p>
+
+          </td>
+          <td>
+            <select name="sex" id="sex" >
+              <option value="男">男</option>
+              <option value="女">女</option>
+              <option value="none">答えたくない</option>
+            </select>
+            
+
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <span class="option">任意</span>
+            <p>生年月日</p>
+        
+          </td>
+          <td>
+            <input type="date" name="birth" id="birth" 
+            class="validation[custom[date],past[NOW]]" />
+        
+          </td>
+        </tr>
+            <tr>
+              <td>
+                <span class="option">任意</span>
+                <p>年令</p>
+              </td>
+              <td>
+        
+                <input type="number" id="age" name="age" 
+                class="validation[custom[number]]" />
+              </td>
+            </tr>  
+        
+                
+          </table>
+          
+        </div>
+    <div class="contacts">
+      
+      <table border="1" align="center">
+        <p class="contactsinfo">contacts</p>
+
+        <tr>
+          <td>
+            <span class="must">必須</span>
+            <p>TEL</p>
+
+          </td>
+          <td>
+
+            <input type="text" id="tel" name="tel"
+            class="validation[required,custom[phone]]" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <span class="option">任意</span>
+            <p>FAX</p>
+
+          </td>
+          <td>
+
+            <input type="number" id="fax" name="fax"  />
+          </td>
+        </tr>
+        
+        
+        <tr>
+          <td>
+            <span class="option">任意</span>
+            <p>メールアドレス</p>
+          </td>
+          <td>
+            
+            <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="メールアドレス"
+            class="validate[custom[email]]"
+            
+            />
+            
+
+          </td>
+        </tr>
+      </table>
+    </div>
+      <div class="about">
+        <p class="aboutinfo">about for art</p>
+
+        <table border="1" align="center">
+          
+          <tr>
+            <td>
+              <span class="must">必須</span>
+              <p>絵のタイトル</p>
+  
+            </td>
+            <td>
+  
+              <input type="text" name="title" id="title"  class="validate[required]"/>
+            </td>
+          </tr>
+  
+          <tr>
+            <td>
+              <span class="option">任意</span>
+              <p>参考にした写真集、資料等</p>
+  
+            </td>
+            <td>
+  
+              <input type="text" id="refernce" name="reference" />
+            </td>
+          </tr>
+          
+  
+        
+        </table>
+      </div>
+
+      <button type="submit" class="confirmbtn">確認ページへ</button>
+    </form>
+    <%- include ('../footer.ejs') -%>
+     <!--以下はjQuery-Validation-Engineの設定-->
+
+
+
+    <script>
+
+/*
+      
+      $(function () {
+        $("#form").validate({
+          rules: {
+            name: { required: true },
+            // subname: {required: true,},
+            // namep: {required: true,},
+            // subnamep: {required: true,},
+            // address: {required: true,},
+            // tel: {required: true,},
+            // fax: {required: true,},
+            email: { required: true },
+            // school: {required: true,},
+            // grade: {required: true,},
+            // sex: {required: true,},
+            // birth: {required: true,},
+            // age: {required: true,},
+            // title: {required: true,},
+          },
+
+          messages: {
+            name: {
+              required: "お名前を入力してください",
+            },
+          },
+        });
+      });
+      */
+    </script>
+
+  
+
+</html>

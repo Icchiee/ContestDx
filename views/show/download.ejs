@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="Ja">
+  <head>
+    <meta charset="utf-8">
+   
+    <title>コンクールQRコード作成app</title>
+    <link rel="stylesheet" href="/public/stylesfordownload.css">
+
+  </head>
+  <header>
+    <div class="container">
+      <div class="icon">
+        <img
+          src="/uminoko.png"
+          width="120"
+          height="120"
+          alt="コンクールアイコン"
+        />
+      </div>
+      <h1>WebApp(プロトタイプ)</h1>
+  
+    </div>
+  </header>
+  <body>
+    <div class="flowchart">
+      <ul class="nav">
+        <li class="now">フォーム入力</li>
+        <li>→</li>
+        <li>内容確認</li>
+        <li>→</li>
+        <li>QRcodeの生成</li>
+      </ul>
+
+    </div>
+  
+<h1> 以下よりQRcodeを保存してください!</h1>
+<img src="/QRcode.png" alt="写真">
+<h1>作品提出方法は以下の手順に従ってください。</h1>
+<ol>
+  <li>保存したQRコードを印刷する。</li>
+  <li>印刷されたqrcodeを作品の裏に貼り付ける。</li>
+  <li>提出。</li>
+</ol>
+<%- include ('../footer.ejs') -%>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>QRコード表示ページ</title>
+  </head>
+  <body>
+  <header></header>
+  <h1>以下に表示されたQRコードを印刷して作品の裏に貼り付けてください。</h1>
+      <!--jqueryの読み込み-->
+      <script src="src/jquery-3.5.1.min.js"></script>
+      <!--QRcode template読み込み-->
+      <script src="src/jquery.qrcode.js"></script>
+      <script src="src/qrcode.js"></script>
+  
+  
+      <!--Qrcode出力ボックス-->
+      <div id="qrcode"></div>
+      <!--QRcode出力メソッドはjquery.qrcode.jsに存在-->
+      <!--以下は情報を入れるためのfunction-->
+      <script>
+        let textfield2 ="";
+        get_text = document.location.search;
+        get_text = get_text.substring(1,get_text.length);
+        document.receive.textfield2.value=decodeURI(get_text);
+        console(textfield2);
+        console.log($('#name1').getAttribute("type"));
+      
+       function appearqrcode(){
+         //QRコード化したい値を変数に渡す。
+         
+         var qr_value ="あいうえお";
+         //日本語が文字化けしないように対策
+         const utf8qr_value=unescape(encodeURIComponent(qr_value));
+
+        $('#qrcode').html("");
+        $('#qrcode').qrcode({text:utf8qr_value});
+       };
+       appearqrcode();
+      </script>
+      
+  </body>
+</html>

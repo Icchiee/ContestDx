@@ -1,0 +1,214 @@
+
+body{
+  background-color: rgb(240, 236, 236);
+}
+
+
+.form{
+  margin-bottom: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(186, 219, 229);
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+
+.icon{
+  border: lightpink;
+  margin: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 50%;
+
+}
+
+/*フローチャート用*/
+
+.nav{
+    list-style: none;
+    display: flex;
+    overflow: hidden;
+    margin: 20px;
+}
+
+.nav li{
+  width: 140px;
+  text-align: center;
+  /*float: left;*/
+}
+
+.nav li:nth-child(odd){
+  background-color: lightslategray;
+  /*float: left;*/
+}
+.nav li:nth-child(1){
+  background-color: tomato;
+  /*float: left;*/
+}
+
+.nav li:nth-child(even){
+
+  width: 30px;
+
+}
+
+body input{
+  border: 1px solid rgb(157, 188, 219);  /* 枠線 */
+  border-radius: 0.67em;   /* 角丸 */
+  padding: 0.5em;          /* 内側の余白量 */
+  margin: 0.1em;
+  background-color: snow;  /* 背景色 */
+  width: 10em;             /* 横幅 */
+  font-size: 1em;          /* 文字サイズ */
+  line-height: 1.2;        /* 行の高さ */
+  outline: none;
+}
+
+body input:focus{
+  border-color: black;   /* 枠線の色 */
+  background-color: #ffc;  /* 背景色 */
+}
+
+body select{
+  border: 1px solid lightslategray;  /* 枠線 */
+  border-radius: 0.67em;   /* 角丸 */
+  padding: 0.5em;          /* 内側の余白量 */
+  margin: 0.1em;
+  background-color: snow;  /* 背景色 */
+  width: 10em;             /* 横幅 */
+  font-size: 1em;          /* 文字サイズ */
+  line-height: 1.2;        /* 行の高さ */
+  outline: none;
+}
+
+table{
+  border-collapse: collapse;
+  
+}
+
+
+.personal{
+  position: relative;
+  border: solid;
+  border-color: mediumaquamarine;
+  border-radius: 15px;
+  padding-top: 10px;
+  margin-bottom: 40px;
+}
+
+.personalinfo{
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  font-size: 1em;
+  padding: 0 1em;
+  margin: 0;
+  background-color: white;
+  border: solid;
+  border-color: black;
+  border-radius: 10px;
+  transform: translateY(-60%) translateX(1em);
+}
+
+.contacts{
+  position: relative;
+  border: solid;
+  border-color: rgb(20, 177, 250);
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 40px;
+}
+
+.contactsinfo{
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  font-size: 1em;
+  padding: 0 1em;
+  margin: 0;
+  background-color: white;
+  border: solid;
+  border-color: black;
+  border-radius: 10px;
+  transform: translateY(-60%) translateX(1em);
+}
+
+.about{
+  position: relative;
+  border: solid;
+  border-color: rgb(240, 83, 180);
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 40px;
+}
+
+.aboutinfo{
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  font-size: 1em;
+  padding: 0 1em;
+  margin: 0;
+  background-color: white;
+  border: solid;
+  border-color: black;
+  border-radius: 10px;
+  transform: translateY(-60%) translateX(1em);
+}
+
+
+.confirmbtn{
+  width: auto;
+  background: skyblue;
+  text-align: center;
+  padding: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.confirmbtn:hover {
+  opacity: 0.8;
+} 
+
+.must {
+  background: #FF1A00;
+  color: #FFF;
+	border-radius: 3px;
+	font-size: 8px;
+	margin-right: 10px;
+	padding: 2px 5px;
+	letter-spacing: 0.2em;
+}
+.option {
+  background: lightslategray;
+  color: #FFF;
+	border-radius: 3px;
+	font-size: 8px;
+	margin-right: 10px;
+	padding: 2px 5px;
+	letter-spacing: 0.2em;
+}
+
+td p{
+  font-weight: bold;
+}
+
+/*
+スマホ対応用 途中
+.form-table th,
+.form-table td {
+  display: block;
+  width: 100%;
+  border-bottom: none;
+}
+*/
+

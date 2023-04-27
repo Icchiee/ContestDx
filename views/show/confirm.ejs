@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="Ja">
+  <head>
+    <meta charset="utf-8">
+    
+    <title>コンクールQRコード作成app</title>
+    <link rel="stylesheet" href="/public/stylesforconfirm.css" />
+    
+  </head>
+  <header>
+    <div class="container">
+      <div class="icon">
+        <img
+          src="/uminoko.png"
+          width="120"
+          height="120"
+          alt="コンクールアイコン"
+        />
+      </div>
+      <h1>WebApp(プロトタイプ)</h1>
+  
+    </div>
+  </header>
+  <body>
+    <div class="flowchart">
+      <ul class="nav">
+        <li class="now">フォーム入力</li>
+        <li>→</li>
+        <li>内容確認</li>
+        <li>→</li>
+        <li>QRcodeの生成</li>
+      </ul>
+
+    </div>
+  
+
+    <div class="confirm">
+
+
+      <p class="confirminfo"> 入力内容の確認</p>
+
+      
+      <table border="1" align="center">
+        
+        <tr>
+          <td>
+            氏名
+            
+          </td>
+          <td>
+            <%= information.name %>
+          </td>
+        </tr>
+        
+        <tr>
+          <td>
+            氏名（カタカナ）
+            
+          </td>
+          <td>
+            <%= information.subname %>
+          </td>
+        </tr>
+        
+        <tr>
+          <td>
+            保護者氏名 
+            
+          </td>
+          <td>
+            <%= information.namep %>
+          </td>
+        </tr>
+        
+        <tr>
+          <td>
+            
+            保護者氏名（カタカナ）
+          </td>
+          <td>
+            <%= information.subnamep %> 
+          </td>
+        </tr>
+        
+        <tr>
+          <td>
+            郵便番号
+            
+          </td>
+          <td>
+            
+             <%= information.zip %>
+            </td>
+        </tr>
+        
+        
+        <tr>
+          <td>
+            住所 
+            
+          </td>
+          <td>
+            
+            <%= information.address %>
+            <%= information.address2 %>
+          </td>
+        </tr>
+        
+        <tr>
+          <td>
+            学校名
+            
+          </td>
+          <td>
+            <%= information.school %> 
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td>
+            学年
+            
+          </td>
+          <td>
+            <%= information.grade %>年 
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td>
+            性別
+            
+          </td>
+          <td>
+            <%= information.sex %> 
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td>
+            生年月日
+            
+          </td>
+          <td>
+            <%= information.birth %> 
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td>
+            年令
+            
+          </td>
+          <td>
+            
+            <%= information.age %>
+          </td>
+        </tr>
+        
+        <tr>
+          <td>
+            電話番号 
+            
+          </td>
+          <td>
+      <%= information.tel %> 
+      
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      FAX
+      
+    </td>
+    <td>
+      <%= information.fax %> 
+      
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      
+      メールアドレス
+    </td>
+    <td>
+      <%= information.email %> 
+      
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      
+      作品タイトル
+    </td>
+    <td>
+      <%= information.title %> 
+      
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      参考資料
+      
+    </td>
+    <td>
+      <%= information.reference %>
+      
+    </td>
+  </tr>
+  
+  
+</table>
+</div>
+<form action="/show/make" method="GET">
+  <div class="button">
+
+     <input type="submit" value="QRcode ダウンロード画面へ" class="confirmbtn">
+  </div>
+ 
+</form>
+
+
+<%- include ('../footer.ejs') -%>

@@ -1,0 +1,23 @@
+
+
+footer p{
+  display: table-cell;
+  background-color: lightblue;
+  height: 200px;
+  width: 1000px;
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+  color: gray;
+}
+
+footer{
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(186, 219, 229);
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}

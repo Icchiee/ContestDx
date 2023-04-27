@@ -1,0 +1,105 @@
+
+
+body{
+  background-color: rgb(240, 236, 236);
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(186, 219, 229);
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+
+.icon{
+  border: lightpink;
+  margin: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 50%;
+
+}
+
+
+/*フローチャート用*/
+
+.nav{
+  list-style: none;
+  display: flex;
+  overflow: hidden;
+  margin: 20px;
+}
+
+.nav li{
+width: 140px;
+text-align: center;
+/*float: left;*/
+}
+
+.nav li:nth-child(odd){
+background-color: lightslategray;
+/*float: left;*/
+}
+.nav li:nth-child(3){
+background-color: tomato;
+/*float: left;*/
+}
+
+.nav li:nth-child(even){
+
+width: 30px;
+
+}
+
+table{
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.tableposition p{
+  font-weight: bold;
+}
+
+.confirm{
+  position: relative;
+  border: solid;
+  border-color: teal;
+  border-radius: 15px;
+  padding-top: 10px;
+  margin-bottom: 40px;
+}
+
+.confirminfo{
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  font-size: 1em;
+  padding: 0 1em;
+  margin: 0;
+  background-color: white;
+  border: solid;
+  border-color: black;
+  border-radius: 10px;
+  transform: translateY(-60%) translateX(1em);
+}
+
+
+
+.confirmbtn{
+  width:auto;
+  background: skyblue;
+  text-align: center;
+  padding: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.confirmbtn:hover {
+  opacity: 0.8;
+} 
